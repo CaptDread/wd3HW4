@@ -263,6 +263,20 @@ body {
 	animation: normal 13s ease;
 }
 
+.headbar .headContent .nav .daburger .daburger:active::after {
+	content: "";
+}
+
+.headbar .headContent .nav .daburger .daburger:active::after .dagoods {
+	transition: opacity 420ms ease 130ms;
+}
+
+.headbar .headContent .nav .daburger .daburger:active::after .topbun,
+.headbar .headContent .nav .daburger .daburger:active::after .botbun {
+	-ms-transform: rotate(45deg);
+	    transform: rotate(45deg);
+}
+
 .headbar .headContent .nav .daburger .topbun {
 	margin-top: 13%;
 }
@@ -308,6 +322,55 @@ body {
 
 .description .hero .heroImgs .skull3 {
 	transform: rotateY(180deg);
+}
+
+.options .cta {
+	background: #eee;
+	--borderWidth: 4.2px;
+	position: relative;
+	border-radius: var(--borderWidth);
+	padding: 1.3em;
+	margin: 0em -1.3em;
+	width: -webkit-fit-content;
+	width: -moz-fit-content;
+	width: fit-content;
+	text-align: center;
+}
+
+.options .cta p {
+	margin-bottom: 1.3em;
+}
+
+.options .cta a {
+	text-transform: capitalize;
+	text-decoration: none;
+	color: black;
+}
+
+.options .cta a:hover {
+	background: linear-gradient(60deg, #f79533, #f37055, #ef4e7b, #a166ab, #5073b8, #1098ad, #07b39b, #6fba82);
+	background-size: 200% auto;
+	background-clip: text;
+	text-fill-color: transparent;
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+	animation: animatedgradient 3s ease alternate infinite;
+	font-size: larger;
+	font-weight: 700;
+}
+
+.options .cta::after {
+	content: '';
+	position: absolute;
+	top: calc(-1 * var(--borderWidth));
+	left: calc(-1 * var(--borderWidth));
+	height: calc(100% + var(--borderWidth) * 2);
+	width: calc(100% + var(--borderWidth) * 2);
+	background: linear-gradient(60deg, #f79533, #f37055, #ef4e7b, #a166ab, #5073b8, #1098ad, #07b39b, #6fba82);
+	border-radius: calc(2 * var(--borderWidth));
+	z-index: -1;
+	animation: animatedgradient 3s ease alternate infinite;
+	background-size: 300% 300%;
 }
 
 .options .choices {
@@ -356,6 +419,14 @@ body {
 	width: 6.66em;
 	align-self: center;
 	margin-top: -17%;
+}
+
+.options .choices .option .skulls span {
+	font-size: 6.66em;
+}
+
+.options .choices .option .glad .fas {
+	color: silver;
 }
 
 .options .choices .option .h3 {
@@ -431,6 +502,18 @@ footer ul img {
 }
 
 @keyframes gradient {
+	0% {
+		background-position: 0% 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0% 50%;
+	}
+}
+
+@keyframes animatedgradient {
 	0% {
 		background-position: 0% 50%;
 	}

@@ -40,7 +40,7 @@ body {
 /* 2. Content ================================= */
 
 .headbar{
-	background-color: variables.$auxilary-color;
+	background-color: #eee;
 	height: fit-content;
 	display: flex;
 	display: flex;
@@ -116,8 +116,9 @@ body {
 				display: flex;
 				flex-direction: column;
 				margin-left: auto;
-				
 
+				
+				
 				div{
 					padding: 4.2% 0%;
 					margin: 4.2% 0%;
@@ -128,6 +129,16 @@ body {
 					width: 75%;
 					position: relative;
 					animation: normal 13s ease;
+				}
+				.daburger:active::after{
+					content: "";
+					.dagoods{
+						transition: opacity 420ms ease 130ms;
+					}
+					.topbun,
+					.botbun{
+						transform: rotate(45deg);
+					}
 				}
 				.topbun{
 					margin-top: 13%;
@@ -186,6 +197,50 @@ body {
 
 .options{
 
+	.cta{
+		background: #eee;
+		--borderWidth: 4.2px;
+		position: relative;
+		border-radius: var(--borderWidth);
+		padding: 1.3em;
+		margin: 0em -1.3em;
+		width: fit-content;
+		text-align: center;
+
+		p{
+			margin-bottom: 1.3em;
+		}
+
+		a{
+			text-transform: capitalize;
+			text-decoration: none;
+			color: black;
+		}
+		a:hover{
+			background: linear-gradient(60deg, #f79533, #f37055, #ef4e7b, #a166ab, #5073b8, #1098ad, #07b39b, #6fba82);
+			background-size: 200% auto;
+			background-clip: text;
+			text-fill-color: transparent;
+  			-webkit-background-clip: text;
+  			-webkit-text-fill-color: transparent;
+			animation: animatedgradient 3s ease alternate infinite;
+			font-size: larger;
+			font-weight: 700;
+		}
+	}
+	.cta::after {
+		content: '';
+		position: absolute;
+		top: calc(-1 * var(--borderWidth));
+		left: calc(-1 * var(--borderWidth));
+		height: calc(100% + var(--borderWidth) * 2);
+		width: calc(100% + var(--borderWidth) * 2);
+		background: linear-gradient(60deg, #f79533, #f37055, #ef4e7b, #a166ab, #5073b8, #1098ad, #07b39b, #6fba82);
+		border-radius: calc(2 * var(--borderWidth));
+		z-index: -1;
+		animation: animatedgradient 3s ease alternate infinite;
+		background-size: 300% 300%;
+	}
 	
 	.choices{
 		display: flex;
@@ -232,6 +287,14 @@ body {
 				align-self: center;
 				margin-top: -17%;
 			}
+
+			.skulls span{
+				font-size: 6.66em;
+			}
+			.glad .fas{
+				color: silver;
+			}
+
 
 			.h3{
 				margin-top: -13%;
@@ -311,8 +374,19 @@ footer{
 
 
 
-// gradient
+// gradients
 @keyframes gradient {
+	0% {
+		background-position: 0% 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0% 50%;
+	}
+}
+@keyframes animatedgradient {
 	0% {
 		background-position: 0% 50%;
 	}
